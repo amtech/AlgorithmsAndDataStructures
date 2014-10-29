@@ -1,9 +1,9 @@
 package test.graph;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import main.graph.Dijkstra;
-import main.graph.Graph;
-import main.graph.Graph.Node;
+import main.graph.model.Graph;
+import main.graph.model.Graph.Node;
 
 import org.junit.Before;
 import org.junit.Test;

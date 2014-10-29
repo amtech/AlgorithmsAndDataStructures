@@ -2,7 +2,8 @@ package main.graph;
 
 import java.util.List;
 
-import main.graph.Graph.Node;
+import main.graph.model.Graph;
+import main.graph.model.Graph.Node;
 
 public class Dijkstra {
 	

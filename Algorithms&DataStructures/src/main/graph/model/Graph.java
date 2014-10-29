@@ -1,4 +1,4 @@
-package main.graph;
+package main.graph.model;
 
 import java.util.HashMap;
 import java.util.Iterator;
