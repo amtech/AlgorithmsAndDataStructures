@@ -4,13 +4,13 @@ import java.util.List;
 
 import main.graph.Graph.Node;
 
-public class Dijkstra {
-	
+public class BranchAndBound {
+
 	private final Graph graph;
 	private final Node startNode;
 	private final Node finishNode;
 	
-	public Dijkstra(final Graph graph, final String startNodeKey, final String finishNodeKey) {
+	public BranchAndBound(final Graph graph, final String startNodeKey, final String finishNodeKey) {
 		super();
 		if (graph == null) {
 			throw new NullPointerException("Graph cannot be null");
@@ -37,8 +37,10 @@ public class Dijkstra {
 			return;
 		}
 		updateCostOfUnvisitedNeighbours(node);
-		node.visit();
 		for (Node neighbour : node.getNeighbours()) {
+			if (neighbour.getCurrentCost() < node.getCurrentCost() + node.getCostForNeighbour(neighbour)) {
+				continue;
+			}
 			makeStep(neighbour);
 		}
 	}
@@ -46,9 +48,6 @@ public class Dijkstra {
 	private void updateCostOfUnvisitedNeighbours(Node node) {
 		List<Node> neighbours = node.getNeighbours();
 		for(Node neighbour : neighbours) {
-			if (neighbour.isVisited()) {
-				continue;
-			}
 			Integer edgeCost = node.getCostForNeighbour(neighbour);
 			neighbour.tryUpdateCost(node.getCurrentCost() + edgeCost, node);
 		}
@@ -59,7 +58,6 @@ public class Dijkstra {
 			throw new RuntimeException("Path hasn't been found");
 		}
 		return finishNode.getCurrentCost();
-		
 	}
 	
 	public String printPath() {
