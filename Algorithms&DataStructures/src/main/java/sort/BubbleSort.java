@@ -1,17 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package main.sort;
-
-import java.util.Arrays;
+package sort;
 
 public class BubbleSort {
-    public static void main(String[] args) {
-        int[] arr = new int[] {1, 15, 16, 2, -1, 19, 3, 7, 15, 9};
-        sort(arr);
-        System.out.println(Arrays.toString(arr));
-    }
     
     public static void sort(int[] array) {
         for (int barrier = 0; barrier < array.length - 1; barrier++) {

@@ -1,9 +1,8 @@
-package test.graph;
+package graph;
 
 import static org.junit.Assert.assertEquals;
-import main.graph.BranchAndBound;
-import main.graph.model.Graph;
-import main.graph.model.Graph.Node;
+import graph.model.Graph;
+import graph.model.Graph.Node;
 
 import org.junit.Before;
 import org.junit.Test;
