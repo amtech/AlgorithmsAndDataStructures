@@ -4,7 +4,6 @@ public class Item {
 	protected String name = "";
 	protected int value = 0;
 	protected int weight = 0;
-	//protected double volume = 0;
 	
 	protected int bounding   = 1; // the maximal limit of item's pieces
     protected int inKnapsack = 0; // the pieces of item in solution
@@ -14,14 +13,6 @@ public class Item {
         setValue(value);
         setWeight(weight);
     }
-
-	/*
-	public Item(String name, int value, int weight, double volume) {
-		setName(name);
-		setValue(value);
-		setWeight(weight);
-		setVolume(volume);
-	}*/
 
 	public int getValue() {
 		return value;
@@ -38,14 +29,6 @@ public class Item {
 	public void setWeight(int weight) {
 		this.weight = Math.max(weight, 0);
 	}
-
-	/*public double getVolume() {
-		return volume;
-	}
-
-	public void setVolume(double volume) {
-		this.volume = Math.max(volume, 0);
-	}*/
 
 	public String getName() {
 		return name;

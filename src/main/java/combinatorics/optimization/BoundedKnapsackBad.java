@@ -29,7 +29,25 @@ class BoundedKnapsackBad {
 				}
 			}
 		}
+		selectItemsToKnapsack(knapsackCosts, weights, maxWeight);
 		return knapsackCosts;
+	}
+	
+	private static void selectItemsToKnapsack(int[][] table, int weights[], int maxWeight) {
+		int n = weights.length;
+		int solutionWeight = 0;
+		System.out.println("Chosen items: ");
+		for (int i = n, j = maxWeight; i > 0 && j >= 0; i--) {
+			int tempI = table[i][j];
+			int tempI_1 = table[i - 1][j];
+			if ((i == 0 && tempI > 0) || (i > 0 && tempI != tempI_1)) {
+				int wH = weights[i - 1];
+				System.out.println(i + "   ---> weight: " + wH);
+				j -= wH;
+				solutionWeight += wH;
+			}
+		}
+		System.out.println("Weight of solution: " + solutionWeight);
 	}
 	
 	private static int getMaxCostOfKnapsack(int[][] knapsackCosts) {
