@@ -1,17 +1,9 @@
-package test.sort;
+package sort;
 
 import static org.junit.Assert.assertArrayEquals;
 
 import java.util.Arrays;
 import java.util.Random;
-
-import main.sort.BubbleSort;
-import main.sort.CountingSort;
-import main.sort.InsertionSort;
-import main.sort.MergeSort;
-import main.sort.MergeSortModif1;
-import main.sort.QuickSort;
-import main.sort.SelectionSort;
 
 import org.junit.Before;
 import org.junit.BeforeClass;

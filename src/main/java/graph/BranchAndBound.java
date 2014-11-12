@@ -1,9 +1,9 @@
-package main.graph;
+package graph;
+
+import graph.model.Graph;
+import graph.model.Graph.Node;
 
 import java.util.List;
-
-import main.graph.model.Graph;
-import main.graph.model.Graph.Node;
 
 public class BranchAndBound {
 
