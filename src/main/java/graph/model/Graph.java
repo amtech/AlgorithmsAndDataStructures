@@ -8,6 +8,7 @@ import java.util.NavigableSet;
 import java.util.TreeSet;
 
 public class Graph {
+	
 	private HashMap<String, Node> nodes = new HashMap<String, Node>();
 	
 	public Node addNode(String key) {

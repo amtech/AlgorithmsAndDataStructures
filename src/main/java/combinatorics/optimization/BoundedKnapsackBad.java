@@ -3,9 +3,12 @@ package combinatorics.optimization;
 class BoundedKnapsackBad {
 	
 	public static void main(String[] args) throws Exception {
-		int weights[] = { 4, 7, 11, 12, 16, 20 };
-		int costs[] = { 7, 10, 15, 20, 27, 34 };
-		int maxWeight = 35;
+		//int weights[] = { 4, 7, 11, 12, 16, 20 };
+		//int costs[] = { 7, 10, 15, 20, 27, 34 };
+		//int maxWeight = 35;
+		int weights[] = { 4, 3, 2};
+		int costs[] = { 50, 40, 30 };
+		int maxWeight = 9;
 		int[][] knapsackCosts = knapsack(weights, costs, maxWeight);
 		print(knapsackCosts);
 		System.out.println("Max cost: " + getMaxCostOfKnapsack(knapsackCosts));
