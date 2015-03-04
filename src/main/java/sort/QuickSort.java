@@ -6,10 +6,10 @@ public class QuickSort {
 		if (array == null || array.length < 2){
 	    	return;
 	    }
-	    quicksort(array, 0, array.length - 1);
+	    quicksort1(array, 0, array.length - 1);
 	}
 
-  	private static void quicksort(int[] array, int low, int high) {
+  	private static void quicksort1(int[] array, int low, int high) {
 		int i = low, j = high;
 		
 		int pivot = array[low + (high-low)/2];
@@ -28,9 +28,9 @@ public class QuickSort {
 			}
 		}
 		if (low < j)
-			quicksort(array, low, j);
+			quicksort1(array, low, j);
 		if (i < high)
-			quicksort(array, i, high);
+			quicksort1(array, i, high);
   	}
 
   	private static void swap(int[] arr, int i, int j){

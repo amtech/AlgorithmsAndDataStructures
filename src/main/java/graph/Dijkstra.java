@@ -3,9 +3,47 @@ package graph;
 import graph.model.Graph;
 import graph.model.Graph.Node;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.List;
 
 public class Dijkstra {
+	
+	public static void main(String[] args) {
+		Graph graph = readGraph();
+		Dijkstra dijkstra = new Dijkstra(graph, "1", "80");
+		dijkstra.findShortesWay();
+		System.out.println(dijkstra.printPath());
+	}
+	
+	public static Graph readGraph() {
+		Graph graph = new Graph();
+		for (int i = 0; i < 200; i++) {
+			graph.addNode("" + (i + 1));
+		}
+		try (BufferedReader br = new BufferedReader(new FileReader(new File("src/main/resources/graph/dijkstraData.txt")))) {
+			String line;
+			while ((line = br.readLine()) != null) {
+				String[] parts = line.split("\\t");
+				Node currentMode = graph.getByKey(parts[0].trim());
+				for (int i = 1; i < parts.length; i++) {
+					String[] vertexToCost = parts[i].split(",");
+					Node toMode = graph.getByKey(vertexToCost[0].trim());
+					int cost = new Integer(vertexToCost[1].trim());
+					currentMode.addEdge(cost, toMode);
+				}
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+        System.out.println("Loaded");
+        return graph;
+    }
 	
 	private final Graph graph;
 	private final Node startNode;

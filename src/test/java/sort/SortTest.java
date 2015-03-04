@@ -73,6 +73,16 @@ public class SortTest {
 		assertArrayEquals(array, sortedArray);
 	}
 	
+	private static boolean isSorted(int[] array) {
+		boolean isSorted = true;
+		for (int i = 1; i < array.length; i++) {
+			if (array[i - 1] > array[i]) {
+				isSorted = false;
+			}
+		}
+		return isSorted;
+	}
+	
 	private static int[] generateArrayOfRandomNumbers(int size) {
 		int[] array = new int[size];
 		Random random = new Random();
